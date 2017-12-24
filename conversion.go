@@ -20,7 +20,7 @@ func TimeNow() (to string) {
 	return time.Now().Format(TIME_NOW)
 }
 
-func TimeYear() (to string) {
+func TimeDate() (to string) {
 	return time.Now().Format(TIME_YEAR)
 }
 
