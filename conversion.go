@@ -11,20 +11,20 @@ import (
 )
 
 const (
-	TIME_YEAR = "20060102"
-	TIME_HOUR = "150405"
-	TIME_NOW = "20060102150405"
+	TIME_YEAR = "2006-01-02"
+	TIME_HOUR = "15:04:05"
+	TIME_NOW  = "2006-01-02 15:04:05"
 )
 
-func TimeNow()(to string){
+func TimeNow() (to string) {
 	return time.Now().Format(TIME_NOW)
 }
 
-func TimeYear()(to string){
+func TimeYear() (to string) {
 	return time.Now().Format(TIME_YEAR)
 }
 
-func TimeHour()(to string){
+func TimeHour() (to string) {
 	return time.Now().Format(TIME_HOUR)
 }
 
@@ -140,9 +140,9 @@ func ToBool(v interface{}) (bool, error) {
 		return value, nil
 	case string:
 		switch value {
-		case "T","t","true", "True":
+		case "T", "t", "true", "True":
 			return true, nil
-		case "F","f","false", "False":
+		case "F", "f", "false", "False":
 			return false, nil
 		default:
 			return false, errors.New("cannot convert " + value + " to bool")
@@ -383,4 +383,3 @@ func ToUint64Slice(v interface{}) ([]uint64, error) {
 		return nil, errors.New(fmt.Sprintf("cannot convert %v(%v) to []uint64", v, reflect.TypeOf(v)))
 	}
 }
-
